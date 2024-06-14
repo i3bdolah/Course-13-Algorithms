@@ -53,15 +53,28 @@ public:
 		delete CurrentNode;
 	}
 
+	void PrintList() {
+		cout << "\n";
+		Node* CurrentNode = head;
+		while (CurrentNode != NULL)
+		{
+			cout << CurrentNode->value << " ";
+			CurrentNode = CurrentNode->next;
+		}
+		cout << "\n";
+		delete CurrentNode;
+	}
+
 	// -----------------------------------
 
 	Node* Find(EnteredType value) {
-		while (head != NULL)
+		Node* CurrentNode = head;
+		while (CurrentNode != NULL)
 		{
-			if (head->value == value)
-				return head;
+			if (CurrentNode->value == value)
+				return CurrentNode;
 
-			head = head->next;
+			CurrentNode = CurrentNode->next;
 		}
 
 		return NULL;
@@ -78,7 +91,6 @@ public:
 		{
 			head->prev = NewNode;
 		}
-
 		head = NewNode;
 	}
 
