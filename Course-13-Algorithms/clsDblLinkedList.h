@@ -6,7 +6,12 @@ using namespace std;
 template <class EnteredType>
 class clsDblLinkedList
 {
+protected:
+
+	int _Size = 0;
+
 public:
+
 	class Node {
 	public:
 		EnteredType value;
@@ -92,6 +97,7 @@ public:
 			head->prev = NewNode;
 		}
 		head = NewNode;
+		_Size++;
 	}
 
 	void InsertAtEnd(EnteredType value) {
@@ -103,7 +109,6 @@ public:
 		{
 			NewNode->prev = NULL;
 			head = NewNode;
-			return;
 		}
 		else
 		{
@@ -115,6 +120,7 @@ public:
 			LastNode->next = NewNode;
 			NewNode->prev = LastNode;
 		}
+		_Size++;
 	}
 
 	void InsertAfter(Node*& PrevNode, EnteredType NewNodeValue) {
@@ -129,6 +135,7 @@ public:
 			PrevNode->next->prev = NewNode;
 		}
 		PrevNode->next = NewNode;
+		_Size++;
 	}
 
 	void DeleteNode(Node*& NodeToDelete) {
@@ -150,6 +157,7 @@ public:
 		}
 
 		delete NodeToDelete;
+		_Size--;
 	}
 
 	void DeleteFirstNode() {
@@ -163,6 +171,7 @@ public:
 			head->prev = NULL;
 		}
 		delete Temp;
+		_Size--;
 	}
 
 	void DeleteLastNode() {
@@ -185,6 +194,20 @@ public:
 		Node* Temp = LastNode->next;
 		LastNode->next = NULL;
 		delete Temp;
+		_Size--;
 	}
+
+	int Size() {
+		//Node* CurrentNode = head;
+		//int Counter = 0;
+		//while (CurrentNode != NULL)
+		//{
+		//	Counter++;
+		//	CurrentNode = CurrentNode->next;
+		//}
+		//return Counter;
+		return _Size;
+	}
+
 };
 
