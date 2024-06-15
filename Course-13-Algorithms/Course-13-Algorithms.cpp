@@ -12,13 +12,15 @@ int main()
     MyDLL.InsertAtEnd(4);
     MyDLL.InsertAtEnd(5);
 
+    cout << "\n\nBefore .Reverse() : \n\n";
+    MyDLL.PrintDoublyNode();
     MyDLL.PrintList();
 
-    cout << "\n\nBefore .Clear() : \n\n";
-    cout << "Size is : " << MyDLL.Size();
+    MyDLL.Reverse();
 
-    cout << "\n\nAfter .Clear() : \n\n";
-    MyDLL.Clear();
+    cout << "\n\nAfter .Reverse() : \n\n";
+    MyDLL.PrintDoublyNode();
+    MyDLL.PrintList();
 
-    cout << "Size is : " << MyDLL.Size();
+    cout << "\n\n";
 }

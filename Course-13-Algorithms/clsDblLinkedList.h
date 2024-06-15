@@ -219,5 +219,19 @@ public:
 			DeleteFirstNode();
 		}
 	}
+
+	void Reverse() {
+		if (IsEmpty() || head->next == nullptr) return;
+
+		Node* temp = nullptr;
+		while (head != nullptr)
+		{
+			temp = head->prev;
+			head->prev = head->next;
+			head->next = temp;
+			head = head->prev;
+		}
+		head = temp->prev;
+	}
 };
 
