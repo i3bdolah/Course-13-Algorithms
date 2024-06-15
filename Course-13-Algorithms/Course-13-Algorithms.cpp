@@ -12,15 +12,12 @@ int main()
     MyDLL.InsertAtEnd(4);
     MyDLL.InsertAtEnd(5);
 
-    cout << "\n\nBefore .Reverse() : \n\n";
-    MyDLL.PrintDoublyNode();
     MyDLL.PrintList();
 
-    MyDLL.Reverse();
+    clsDblLinkedList <int>::Node* MyNode = MyDLL.GetNode(2);
+    cout << "\n\nGetNode(2) : " << MyNode->value;
 
-    cout << "\n\nAfter .Reverse() : \n\n";
-    MyDLL.PrintDoublyNode();
-    MyDLL.PrintList();
-
+    MyNode = MyDLL.GetNode(9);
+    cout << "\n\nGetNode(9) : " << MyNode->value << " (Returns Head)";
     cout << "\n\n";
 }

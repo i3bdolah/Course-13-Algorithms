@@ -231,7 +231,26 @@ public:
 			head->next = temp;
 			head = head->prev;
 		}
-		head = temp->prev;
+		if (temp->prev != nullptr)
+		{
+			head = temp->prev;
+		}
+	}
+
+	Node* GetNode(int Index) {
+		if (Index < 0) return head;
+
+		if (Index >= _Size) return head;
+
+		if (Index == 0) return head;
+
+		Node* CurrNode = head;
+		for (int i = 0; i < Index; i++)
+		{
+			CurrNode = CurrNode->next;
+		}
+
+		return CurrNode;
 	}
 };
 
