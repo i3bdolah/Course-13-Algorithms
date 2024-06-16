@@ -238,9 +238,7 @@ public:
 	}
 
 	Node* GetNode(int Index) {
-		if (Index < 0) return head;
-
-		if (Index >= _Size) return head;
+		if (Index < 0 || Index >= _Size) return NULL;
 
 		if (Index == 0) return head;
 
@@ -254,12 +252,28 @@ public:
 	}
 
 	EnteredType GetItem(int Index) {
-		return GetNode(Index)->value;
+		Node* GottenNode = GetNode(Index);
+		if (GottenNode == NULL)
+		{
+			return NULL;
+		}
+		else
+		{
+			return GottenNode->value;
+		}
 	}
 
-	void UpdateItem(int Index, EnteredType value) {
-		Node* temp = GetNode(Index);
-		temp->value = value;
+	bool UpdateItem(int Index, EnteredType value) {
+		Node* GottenNode = GetNode(Index);
+		if (GottenNode == NULL)
+		{
+			return false;
+		}
+		else
+		{
+			GottenNode->value = value;
+			return true;
+		}
 	}
 };
 
