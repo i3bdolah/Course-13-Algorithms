@@ -275,5 +275,19 @@ public:
 			return true;
 		}
 	}
+
+	bool InsertAfter(int Index, EnteredType value) {
+		Node* GottenNodeByIndex = GetNode(Index);
+
+		if (GottenNodeByIndex == NULL)
+		{
+			return false;
+		}
+		else
+		{
+			InsertAfter(GottenNodeByIndex, value);
+			return true;
+		}
+	}
 };
 

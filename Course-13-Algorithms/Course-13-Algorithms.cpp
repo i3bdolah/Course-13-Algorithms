@@ -14,14 +14,9 @@ int main()
 
     MyDLL.PrintList();
 
-    cout << "\n\GetItem(2) : " << MyDLL.GetItem(2);
-    cout << "\n\n";
 
-    MyDLL.UpdateItem(2, 500);
-    cout << "Updating index (2) of value (3) to (500)";
-
-    cout << "\n\nUpdateItem(2) : " << MyDLL.GetItem(2);
-    cout << "\n\n";
+    MyDLL.InsertAfter(2, 500);
+    cout << "InsertAfter index (2) of value (3) by (500)";
 
 
     MyDLL.PrintList();
