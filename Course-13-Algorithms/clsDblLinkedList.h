@@ -231,14 +231,14 @@ public:
 			head->next = temp;
 			head = head->prev;
 		}
-		if (temp->prev != nullptr)
+		if (temp->prev != nullptr) // Recommended but not mandatory (to ensure runtime error)
 		{
 			head = temp->prev;
 		}
 	}
 
 	Node* GetNode(int Index) {
-		if (Index < 0) return head;
+		if (Index < 0) return head; 
 
 		if (Index >= _Size) return head;
 
@@ -251,6 +251,10 @@ public:
 		}
 
 		return CurrNode;
+	}
+
+	EnteredType GetItem(int Index) {
+		return GetNode(Index)->value;
 	}
 };
 
