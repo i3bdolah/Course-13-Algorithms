@@ -14,10 +14,9 @@ int main()
 
     MyDLL.PrintList();
 
-    clsDblLinkedList <int>::Node* MyNode = MyDLL.GetNode(2);
-    cout << "\n\nGetNode(2) : " << MyNode->value;
+    cout << "\n\GetItem(2) : " << MyDLL.GetItem(2);
+    cout << "\n\n";
 
-    MyNode = MyDLL.GetNode(9);
-    cout << "\n\nGetNode(9) : " << MyNode->value << " (Returns Head)";
+    cout << "\n\GetItem(9) : " << MyDLL.GetItem(9) << " (Returns Head)";
     cout << "\n\n";
 }
