@@ -17,6 +17,14 @@ int main()
     cout << "\n\GetItem(2) : " << MyDLL.GetItem(2);
     cout << "\n\n";
 
-    cout << "\n\GetItem(9) : " << MyDLL.GetItem(9) << " (Returns Head)";
+    MyDLL.UpdateItem(2, 500);
+    cout << "Updating index (2) of value (3) to (500)";
+
+    cout << "\n\nUpdateItem(2) : " << MyDLL.GetItem(2);
     cout << "\n\n";
+
+
+    MyDLL.PrintList();
+    cout << "\n\n";
+
 }

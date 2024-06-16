@@ -238,7 +238,7 @@ public:
 	}
 
 	Node* GetNode(int Index) {
-		if (Index < 0) return head; 
+		if (Index < 0) return head;
 
 		if (Index >= _Size) return head;
 
@@ -255,6 +255,11 @@ public:
 
 	EnteredType GetItem(int Index) {
 		return GetNode(Index)->value;
+	}
+
+	void UpdateItem(int Index, EnteredType value) {
+		Node* temp = GetNode(Index);
+		temp->value = value;
 	}
 };
 
