@@ -67,7 +67,6 @@ public:
 			CurrentNode = CurrentNode->next;
 		}
 		cout << "\n";
-		delete CurrentNode;
 	}
 
 	// -----------------------------------
