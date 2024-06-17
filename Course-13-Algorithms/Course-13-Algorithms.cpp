@@ -14,6 +14,9 @@ int main()
     MyQueue.Push(50);
 
     MyQueue.Print();
+    cout << "Queue Size  : " << MyQueue.Size() << endl;
+    cout << "Queue Front : " << MyQueue.Front() << endl;
+    cout << "Queue Back  : " << MyQueue.Back() << endl;
 
     MyQueue.Pop();
 
