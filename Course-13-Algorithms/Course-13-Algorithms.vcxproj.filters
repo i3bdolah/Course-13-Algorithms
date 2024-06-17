@@ -21,12 +21,18 @@
     <ClCompile Include="Course-13-Algorithms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="clsMyStack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clsDblLinkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="clsMyQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clsMyStack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
