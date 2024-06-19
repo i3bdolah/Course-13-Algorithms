@@ -31,7 +31,8 @@ public:
 		cout << "\n";
 		if (_Size == 0)
 		{
-			cout << "There is NO Element found.";
+			cout << "No Element found.\n";
+			return;
 		}
 
 		for (int i = 0; i < _Size; i++)
@@ -77,6 +78,29 @@ public:
 		_Size = newSize;
 		return true;
 
+	}
+
+	EnteredType GetItem(int index) {
+		return Array[index];
+	}
+
+	bool Reverse() {
+		if (_Size == 0) return false;
+
+		EnteredType* tempArr = new EnteredType[_Size];
+		for (int i = 0; i < _Size; i++)
+		{
+			tempArr[(_Size - 1) - i] = Array[i];
+		}
+		delete[] Array;
+		Array = tempArr;
+		return true;
+	}
+
+	void Clear() {
+		delete[] Array;
+		Array = new EnteredType[0];
+		_Size = 0;
 	}
 };
 
