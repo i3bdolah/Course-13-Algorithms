@@ -42,6 +42,13 @@ public:
 		cout << "\n";
 	}
 
+	void PrintInfo() {
+		cout << "\n";
+		cout << "Is Empty : " << IsEmpty();
+		cout << "\nSize     : " << Size();
+		cout << "\n";
+	}
+
 	int Size() {
 		return _Size;
 	}
@@ -102,5 +109,7 @@ public:
 		Array = new EnteredType[0];
 		_Size = 0;
 	}
+
+
 };
 
