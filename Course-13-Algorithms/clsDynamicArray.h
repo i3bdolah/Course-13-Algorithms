@@ -58,10 +58,7 @@ public:
 	}
 
 	bool SetItem(int index, EnteredType value) {
-		if (index < 0 || index >= _Size)
-		{
-			return false;
-		}
+		if (index < 0 || index >= _Size) return false;
 
 		Array[index] = value;
 		return true;
@@ -110,6 +107,24 @@ public:
 		_Size = 0;
 	}
 
+	bool DeleteItemAt(int index) {
+		if (index < 0 || index >= _Size) return false;
 
+		EnteredType* tempArr = new EnteredType[_Size - 1];
+		for (int i = 0; i < _Size; i++)
+		{
+			if (i >= index) {
+				tempArr[i] = Array[i + 1];
+			}
+			else
+			{
+				tempArr[i] = Array[i];
+			}
+		}
+		delete[] Array;
+		Array = tempArr;
+		_Size--;
+		return true;
+	}
 };
 
