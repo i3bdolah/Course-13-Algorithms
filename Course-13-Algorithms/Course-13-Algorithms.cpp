@@ -1,79 +1,25 @@
 #include <iostream>
-#include "clsMyStack.h"
+#include "clsDynamicArray.h"
 
 using namespace std;
 
 int main()
 {
-	clsMyStack <int> MyStack;
+	clsDynamicArray <int> MyDynamicArray(5);
+	MyDynamicArray.PrintList();
 
-	MyStack.Push(10);
-	MyStack.Print();
-	MyStack.Push(20);
-	MyStack.Print();
-	MyStack.Push(30);
-	MyStack.Print();
-	MyStack.Push(40);
-	MyStack.Print();
-	MyStack.Push(50);
-	MyStack.Print();
+	MyDynamicArray.SetItem(0, 10);
+	MyDynamicArray.SetItem(1, 20);
+	MyDynamicArray.SetItem(2, 30);
+	MyDynamicArray.SetItem(3, 40);
+	MyDynamicArray.SetItem(4, 50);
+	MyDynamicArray.PrintList();
 
-	cout << "Stack Size  : " << MyStack.Size() << endl;
-	cout << "Stack Top : " << MyStack.Top() << endl;
-	cout << "Stack Bottom  : " << MyStack.Bottom() << endl;
+	MyDynamicArray.Resize(2);
 
-	MyStack.Pop();
-	cout << "\nAfter Pop() : ";
-	MyStack.Print();
-	cout << "\n";
-
-
-	cout << "Stack Size  : " << MyStack.Size() << endl;
-	cout << "Stack Top : " << MyStack.Top() << endl;
-	cout << "Stack Bottom  : " << MyStack.Bottom() << endl;
-
-
-	// Extension #1
-	cout << "GetItem(2) : " << endl;
-	cout << MyStack.GetItem(2) << endl;
-
-	// Extension #2
-	MyStack.Reverse();
-	cout << "After Reverse : ";
-	MyStack.Print();
-	cout << "\n";
-
-	// Extension #3
-	MyStack.UpdateItem(2, 600);
-	cout << "After UpdateItem(2,600) : ";
-	MyStack.Print();
-	cout << "\n";
-
-	// Extension #4
-	MyStack.InsertAfter(2, 800);
-	cout << "After InsertAfter(2, 800) : ";
-	MyStack.Print();
-	cout << "\n";
-
-	// Extension #5
-	MyStack.InsertAtFront(1000);
-	cout << "After InsertAtFront(1000) : ";
-	MyStack.Print();
-	cout << "\n";
-
-	// Extension #6
-	MyStack.InsertAtBack(2000);
-	cout << "After InsertAtBack(2000) : ";
-	MyStack.Print();
-	cout << "\n";
-
-	// Extension #7
-	MyStack.Clear();
-	cout << "After Clear() : ";
-	MyStack.Print();
-	cout << "\n";
-	cout << "Is Empty (True or False) : " << MyStack.IsEmpty();
-
+	MyDynamicArray.PrintList();
+	cout << "\nIs Empty    : " << MyDynamicArray.IsEmpty() << endl;
+	cout << "\nSize      : " << MyDynamicArray.Size() << endl;
 
 	cout << "\n\n";
 }

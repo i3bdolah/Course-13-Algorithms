@@ -21,7 +21,6 @@ public:
 		cout << "\n";
 	}
 
-
 	void Push(EnteredType value) {
 		this->_MyList.InsertAtBeginning(value);
 	}
@@ -34,4 +33,3 @@ public:
 		return this->Back();
 	}
 };
-
