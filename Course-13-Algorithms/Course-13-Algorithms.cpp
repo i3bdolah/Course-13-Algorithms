@@ -15,7 +15,12 @@ int main()
 	MyDynamicArray.SetItem(4, 50);
 	MyDynamicArray.PrintList();
 
-	MyDynamicArray.Resize(2);
+	MyDynamicArray.Resize(0);
+
+	MyDynamicArray.PrintList();
+
+	MyDynamicArray.Resize(3);
+
 
 	MyDynamicArray.PrintList();
 	cout << "\nIs Empty    : " << MyDynamicArray.IsEmpty() << endl;

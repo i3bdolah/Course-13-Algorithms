@@ -29,6 +29,11 @@ public:
 
 	void PrintList() {
 		cout << "\n";
+		if (_Size == 0)
+		{
+			cout << "There is NO Element found.";
+		}
+
 		for (int i = 0; i < _Size; i++)
 		{
 			cout << Array[i] << " ";
@@ -55,36 +60,23 @@ public:
 	}
 
 	bool Resize(int newSize) {
-		if (newSize == _Size || newSize < 1)
+		if (newSize == _Size || newSize < 0) return false;
+
+		EnteredType* tempArr = new EnteredType[newSize];
+
+		// To Limit unecessary iterations
+		if (newSize < _Size) _Size = newSize;
+
+		for (int i = 0; i < _Size; i++)
 		{
-			return false;
+			tempArr[i] = Array[i];
 		}
 
-		else if (newSize > _Size)
-		{
-			int counter = newSize - _Size;
-			while (counter != 0)
-			{
-				Array[_Size + counter];
-				counter--;
-			}
-			_Size = newSize;
-			return true;
-		}
+		delete[] Array;
+		Array = tempArr;
+		_Size = newSize;
+		return true;
 
-		else if (newSize < _Size)
-		{
-			int counter = _Size - newSize;
-			while (counter != 0)
-			{
-				EnteredType* current;
-				current = Array[_Size + counter];
-				delete current;
-				counter--;
-			}
-			_Size = newSize;
-			return true;
-		}
 	}
 };
 
