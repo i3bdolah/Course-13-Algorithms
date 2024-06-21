@@ -110,20 +110,20 @@ public:
 	bool DeleteItemAt(int index) {
 		if (index < 0 || index >= _Size) return false;
 
-		EnteredType* tempArr = new EnteredType[_Size - 1];
-		for (int i = 0; i < _Size; i++)
+		_Size--;
+		EnteredType* tempArr = new EnteredType[_Size];
+
+		for (int i = 0; i < index; i++)
 		{
-			if (i >= index) {
-				tempArr[i] = Array[i + 1];
-			}
-			else
-			{
-				tempArr[i] = Array[i];
-			}
+			tempArr[i] = Array[i];
+		}
+
+		for (int i = index; i < _Size; i++)
+		{
+			tempArr[i] = Array[i + 1];
 		}
 		delete[] Array;
 		Array = tempArr;
-		_Size--;
 		return true;
 	}
 };
