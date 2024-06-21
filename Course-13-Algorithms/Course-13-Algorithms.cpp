@@ -16,9 +16,16 @@ int main()
 	MyDynamicArray.PrintList();
 	MyDynamicArray.PrintInfo();
 
+	cout << "_________________________________\n\n";
 
-	cout << "\n\nAfter DeleteItemAt(2) : ";
-	MyDynamicArray.DeleteItemAt(2);
+
+	cout << "\n\nAfter DeleteFirstItem() : ";
+	MyDynamicArray.DeleteFirstItem();
+	MyDynamicArray.PrintList();
+	MyDynamicArray.PrintInfo();
+
+	cout << "\n\nAfter DeleteLastItem() : ";
+	MyDynamicArray.DeleteLastItem();
 	MyDynamicArray.PrintList();
 	MyDynamicArray.PrintInfo();
 
