@@ -134,5 +134,20 @@ public:
 	bool DeleteLastItem() {
 		return DeleteItemAt(_Size - 1);
 	}
+
+	int Find(EnteredType value) { // returns the Index
+		for (int i = 0; i < _Size; i++)
+		{
+			if (Array[i] == value)
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	bool DeleteItem(EnteredType value) {
+		return DeleteItemAt(Find(value));
+	}
 };
 

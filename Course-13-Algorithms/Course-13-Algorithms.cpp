@@ -19,13 +19,11 @@ int main()
 	cout << "_________________________________\n\n";
 
 
-	cout << "\n\nAfter DeleteFirstItem() : ";
-	MyDynamicArray.DeleteFirstItem();
-	MyDynamicArray.PrintList();
-	MyDynamicArray.PrintInfo();
+	int index = MyDynamicArray.Find(50);
+	cout << "\n\nFind(50) return value is : " << index;
 
-	cout << "\n\nAfter DeleteLastItem() : ";
-	MyDynamicArray.DeleteLastItem();
+	MyDynamicArray.DeleteItem(50);
+	cout << "\n\nAfter DeleteItem(50) : ";
 	MyDynamicArray.PrintList();
 	MyDynamicArray.PrintInfo();
 
