@@ -6,7 +6,6 @@ using namespace std;
 int main()
 {
 	clsDynamicArray <int> MyDynamicArray(5);
-	MyDynamicArray.PrintList();
 
 	MyDynamicArray.SetItem(0, 10);
 	MyDynamicArray.SetItem(1, 20);
@@ -16,14 +15,23 @@ int main()
 	MyDynamicArray.PrintList();
 	MyDynamicArray.PrintInfo();
 
-	cout << "_________________________________\n\n";
+	cout << "\n\nAfter Insert 400 At Beginning : ";
+	cout << MyDynamicArray.InsertAtBeginning(400) << endl;
+	MyDynamicArray.PrintList();
+	MyDynamicArray.PrintInfo();
 
+	cout << "\n\nAfter Insert 500 Before index 2 : ";
+	cout << MyDynamicArray.InsertBefore(2,500) << endl;
+	MyDynamicArray.PrintList();
+	MyDynamicArray.PrintInfo();
 
-	int index = MyDynamicArray.Find(50);
-	cout << "\n\nFind(50) return value is : " << index;
+	cout << "\n\nAfter Insert 600 After index 10 : ";
+	cout << MyDynamicArray.InsertAfter(10, 600) << endl;
+	MyDynamicArray.PrintList();
+	MyDynamicArray.PrintInfo();
 
-	MyDynamicArray.DeleteItem(50);
-	cout << "\n\nAfter DeleteItem(50) : ";
+	cout << "\n\nAfter Insert 800 At End : ";
+	cout << MyDynamicArray.InsertAtEnd(800) << endl;
 	MyDynamicArray.PrintList();
 	MyDynamicArray.PrintInfo();
 

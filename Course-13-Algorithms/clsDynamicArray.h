@@ -28,7 +28,7 @@ public:
 	}
 
 	void PrintList() {
-		cout << "\n";
+		//cout << "\n";
 		if (_Size == 0)
 		{
 			cout << "No Element found.\n";
@@ -39,7 +39,7 @@ public:
 		{
 			cout << Array[i] << " ";
 		}
-		cout << "\n";
+		//cout << "\n";
 	}
 
 	void PrintInfo() {
@@ -67,18 +67,18 @@ public:
 	bool Resize(int newSize) {
 		if (newSize == _Size || newSize < 0) return false;
 
-		EnteredType* tempArr = new EnteredType[newSize];
+		EnteredType* tempArray = new EnteredType[newSize];
 
 		// To Limit unecessary iterations
 		if (newSize < _Size) _Size = newSize;
 
 		for (int i = 0; i < _Size; i++)
 		{
-			tempArr[i] = Array[i];
+			tempArray[i] = Array[i];
 		}
 
 		delete[] Array;
-		Array = tempArr;
+		Array = tempArray;
 		_Size = newSize;
 		return true;
 
@@ -91,13 +91,13 @@ public:
 	bool Reverse() {
 		if (_Size == 0) return false;
 
-		EnteredType* tempArr = new EnteredType[_Size];
+		EnteredType* tempArray = new EnteredType[_Size];
 		for (int i = 0; i < _Size; i++)
 		{
-			tempArr[(_Size - 1) - i] = Array[i];
+			tempArray[(_Size - 1) - i] = Array[i];
 		}
 		delete[] Array;
-		Array = tempArr;
+		Array = tempArray;
 		return true;
 	}
 
@@ -111,19 +111,19 @@ public:
 		if (index < 0 || index >= _Size) return false;
 
 		_Size--;
-		EnteredType* tempArr = new EnteredType[_Size];
+		EnteredType* tempArray = new EnteredType[_Size];
 
 		for (int i = 0; i < index; i++)
 		{
-			tempArr[i] = Array[i];
+			tempArray[i] = Array[i];
 		}
 
 		for (int i = index; i < _Size; i++)
 		{
-			tempArr[i] = Array[i + 1];
+			tempArray[i] = Array[i + 1];
 		}
 		delete[] Array;
-		Array = tempArr;
+		Array = tempArray;
 		return true;
 	}
 
@@ -148,6 +148,46 @@ public:
 
 	bool DeleteItem(EnteredType value) {
 		return DeleteItemAt(Find(value));
+	}
+
+	bool InsertAt(int index, EnteredType value) {
+		if (index < 0 || index > _Size) return false;
+
+		_Size++;
+		EnteredType* tempArray = new EnteredType[_Size];
+
+		for (int i = 0; i < index; i++)
+		{
+			tempArray[i] = Array[i];
+		}
+
+		tempArray[index] = value;
+		index++;
+
+		for (int i = index; i < _Size; i++)
+		{
+			tempArray[i] = Array[i - 1];
+		}
+
+		delete[] Array;
+		Array = tempArray;
+		return true;
+	}
+
+	bool InsertAtBeginning(EnteredType value) {
+		return InsertAt(0, value);
+	}
+
+	bool InsertBefore(int index, EnteredType value) {
+		return index <= 0 ? InsertAtBeginning(value) : InsertAt(index - 1, value);
+	}
+
+	bool InsertAfter(int index, EnteredType value) {
+		return index >= _Size ? InsertAtEnd(value) : InsertAt(index + 1, value);
+	}
+
+	bool InsertAtEnd(EnteredType value) {
+		return InsertAt(_Size, value);
 	}
 };
 
