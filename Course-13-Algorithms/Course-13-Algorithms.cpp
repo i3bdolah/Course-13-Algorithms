@@ -1,39 +1,69 @@
 #include <iostream>
-#include "clsDynamicArray.h"
+#include "clsMyQueueArr.h"
 
 using namespace std;
 
 int main()
 {
-	clsDynamicArray <int> MyDynamicArray(5);
+	clsMyQueueArr <int> MyQueue;
 
-	MyDynamicArray.SetItem(0, 10);
-	MyDynamicArray.SetItem(1, 20);
-	MyDynamicArray.SetItem(2, 30);
-	MyDynamicArray.SetItem(3, 40);
-	MyDynamicArray.SetItem(4, 50);
-	MyDynamicArray.PrintList();
-	MyDynamicArray.PrintInfo();
+	MyQueue.Push(10);
+	MyQueue.Push(20);
+	MyQueue.Push(30);
+	MyQueue.Push(40);
+	MyQueue.Push(50);
 
-	cout << "\n\nAfter Insert 400 At Beginning : ";
-	cout << MyDynamicArray.InsertAtBeginning(400) << endl;
-	MyDynamicArray.PrintList();
-	MyDynamicArray.PrintInfo();
+	MyQueue.PrintList();
+	MyQueue.PrintInfo();
+	cout << "\n";
 
-	cout << "\n\nAfter Insert 500 Before index 2 : ";
-	cout << MyDynamicArray.InsertBefore(2,500) << endl;
-	MyDynamicArray.PrintList();
-	MyDynamicArray.PrintInfo();
+	cout << "After Pop()" << endl;
+	MyQueue.Pop();
+	MyQueue.PrintList();
+	MyQueue.PrintInfo();
+	cout << "\n";
 
-	cout << "\n\nAfter Insert 600 After index 10 : ";
-	cout << MyDynamicArray.InsertAfter(10, 600) << endl;
-	MyDynamicArray.PrintList();
-	MyDynamicArray.PrintInfo();
 
-	cout << "\n\nAfter Insert 800 At End : ";
-	cout << MyDynamicArray.InsertAtEnd(800) << endl;
-	MyDynamicArray.PrintList();
-	MyDynamicArray.PrintInfo();
+	// Extension #1
+	cout << "GetItem(2) : ";
+	cout << MyQueue.GetItem(2) << endl;
+
+	// Extension #2
+	MyQueue.Reverse();
+	cout << "After Reverse : ";
+	MyQueue.PrintList();
+	cout << "\n";
+
+	// Extension #3
+	MyQueue.UpdateItem(2, 600);
+	cout << "After UpdateItem(2,600) : ";
+	MyQueue.PrintList();
+	cout << "\n";
+
+	// Extension #4
+	MyQueue.InsertAfter(2, 800);
+	cout << "After InsertAfter(2, 800) : ";
+	MyQueue.PrintList();
+	cout << "\n";
+
+	// Extension #5
+	MyQueue.InsertAtFront(1000);
+	cout << "After InsertAtFront(1000) : ";
+	MyQueue.PrintList();
+	cout << "\n";
+
+	// Extension #6
+	MyQueue.InsertAtBack(2000);
+	cout << "After InsertAtBack(2000) : ";
+	MyQueue.PrintList();
+	cout << "\n";
+
+	// Extension #7
+	MyQueue.Clear();
+	cout << "After Clear() : ";
+	MyQueue.PrintList();
+	cout << "Is Empty (True or False) : " << MyQueue.IsEmpty();
+
 
 	cout << "\n\n";
 }
