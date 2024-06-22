@@ -1,68 +1,78 @@
 #include <iostream>
-#include "clsMyQueueArr.h"
+#include "clsMyStackArr.h"
 
 using namespace std;
 
 int main()
 {
-	clsMyQueueArr <int> MyQueue;
+	clsMyStackArr <int> MyStackArr;
 
-	MyQueue.Push(10);
-	MyQueue.Push(20);
-	MyQueue.Push(30);
-	MyQueue.Push(40);
-	MyQueue.Push(50);
+	MyStackArr.Push(10);
+	MyStackArr.Print();
+	MyStackArr.Push(20);
+	MyStackArr.Print();
+	MyStackArr.Push(30);
+	MyStackArr.Print();
+	MyStackArr.Push(40);
+	MyStackArr.Print();
+	MyStackArr.Push(50);
+	MyStackArr.Print();
 
-	MyQueue.PrintList();
-	MyQueue.PrintInfo();
+	cout << "Stack Size  : " << MyStackArr.Size() << endl;
+	cout << "Stack Top : " << MyStackArr.Top() << endl;
+	cout << "Stack Bottom  : " << MyStackArr.Bottom() << endl;
+
+	MyStackArr.Pop();
+	cout << "\nAfter Pop() : ";
+	MyStackArr.Print();
 	cout << "\n";
 
-	cout << "After Pop()" << endl;
-	MyQueue.Pop();
-	MyQueue.PrintList();
-	MyQueue.PrintInfo();
-	cout << "\n";
+
+	cout << "Stack Size  : " << MyStackArr.Size() << endl;
+	cout << "Stack Top : " << MyStackArr.Top() << endl;
+	cout << "Stack Bottom  : " << MyStackArr.Bottom() << endl;
 
 
 	// Extension #1
-	cout << "GetItem(2) : ";
-	cout << MyQueue.GetItem(2) << endl;
+	cout << "GetItem(2) : " << endl;
+	cout << MyStackArr.GetItem(2) << endl;
 
 	// Extension #2
-	MyQueue.Reverse();
+	MyStackArr.Reverse();
 	cout << "After Reverse : ";
-	MyQueue.PrintList();
+	MyStackArr.Print();
 	cout << "\n";
 
 	// Extension #3
-	MyQueue.UpdateItem(2, 600);
+	MyStackArr.UpdateItem(2, 600);
 	cout << "After UpdateItem(2,600) : ";
-	MyQueue.PrintList();
+	MyStackArr.Print();
 	cout << "\n";
 
 	// Extension #4
-	MyQueue.InsertAfter(2, 800);
+	MyStackArr.InsertAfter(2, 800);
 	cout << "After InsertAfter(2, 800) : ";
-	MyQueue.PrintList();
+	MyStackArr.Print();
 	cout << "\n";
 
 	// Extension #5
-	MyQueue.InsertAtFront(1000);
+	MyStackArr.InsertAtFront(1000);
 	cout << "After InsertAtFront(1000) : ";
-	MyQueue.PrintList();
+	MyStackArr.Print();
 	cout << "\n";
 
 	// Extension #6
-	MyQueue.InsertAtBack(2000);
+	MyStackArr.InsertAtBack(2000);
 	cout << "After InsertAtBack(2000) : ";
-	MyQueue.PrintList();
+	MyStackArr.Print();
 	cout << "\n";
 
 	// Extension #7
-	MyQueue.Clear();
+	MyStackArr.Clear();
 	cout << "After Clear() : ";
-	MyQueue.PrintList();
-	cout << "Is Empty (True or False) : " << MyQueue.IsEmpty();
+	MyStackArr.Print();
+	cout << "\n";
+	cout << "Is Empty (True or False) : " << MyStackArr.IsEmpty();
 
 
 	cout << "\n\n";
