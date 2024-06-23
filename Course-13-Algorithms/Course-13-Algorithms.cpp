@@ -1,79 +1,55 @@
 #include <iostream>
-#include "clsMyStackArr.h"
+#include "clsUndoRedoProject.h"
 
 using namespace std;
 
+void PrintValue(clsUndoRedoProject <string>& MyString) {
+	cout << "String value : " << MyString.Value << endl;
+}
+
 int main()
 {
-	clsMyStackArr <int> MyStackArr;
+	clsUndoRedoProject <string> MyString;
+	cout << "String value : " << MyString.Value << endl;
 
-	MyStackArr.Push(10);
-	MyStackArr.Print();
-	MyStackArr.Push(20);
-	MyStackArr.Print();
-	MyStackArr.Push(30);
-	MyStackArr.Print();
-	MyStackArr.Push(40);
-	MyStackArr.Print();
-	MyStackArr.Push(50);
-	MyStackArr.Print();
+	MyString.Value = "Abdullah 1";
+	cout << "String value : " << MyString.Value << endl;
 
-	cout << "Stack Size  : " << MyStackArr.Size() << endl;
-	cout << "Stack Top : " << MyStackArr.Top() << endl;
-	cout << "Stack Bottom  : " << MyStackArr.Bottom() << endl;
+	MyString.Value = "Abdullah 2";
+	cout << "String value : " << MyString.Value << endl;
 
-	MyStackArr.Pop();
-	cout << "\nAfter Pop() : ";
-	MyStackArr.Print();
-	cout << "\n";
+	MyString.Value = "Abdullah 3";
+	cout << "String value : " << MyString.Value << endl;
 
+	//cout << "Undo Stack = ";
+	//MyString.PrintUndo();
+	cout << "\n\n";
 
-	cout << "Stack Size  : " << MyStackArr.Size() << endl;
-	cout << "Stack Top : " << MyStackArr.Top() << endl;
-	cout << "Stack Bottom  : " << MyStackArr.Bottom() << endl;
+	cout << "Undo 1 :";
+	MyString.Undo();
+	cout << MyString.Value << endl;
 
+	cout << "Undo 2 :";
+	MyString.Undo();
+	cout << MyString.Value << endl;
+	
+	cout << "Undo 3 :";
+	MyString.Undo();
+	cout << MyString.Value << endl;
 
-	// Extension #1
-	cout << "GetItem(2) : " << endl;
-	cout << MyStackArr.GetItem(2) << endl;
+	cout << "\n\n";
 
-	// Extension #2
-	MyStackArr.Reverse();
-	cout << "After Reverse : ";
-	MyStackArr.Print();
-	cout << "\n";
+	cout << "Redo 1 :";
+	MyString.Redo();
+	cout << MyString.Value << endl;
 
-	// Extension #3
-	MyStackArr.UpdateItem(2, 600);
-	cout << "After UpdateItem(2,600) : ";
-	MyStackArr.Print();
-	cout << "\n";
+	cout << "Redo 2 :";
+	MyString.Redo();
+	cout << MyString.Value << endl;
 
-	// Extension #4
-	MyStackArr.InsertAfter(2, 800);
-	cout << "After InsertAfter(2, 800) : ";
-	MyStackArr.Print();
-	cout << "\n";
-
-	// Extension #5
-	MyStackArr.InsertAtFront(1000);
-	cout << "After InsertAtFront(1000) : ";
-	MyStackArr.Print();
-	cout << "\n";
-
-	// Extension #6
-	MyStackArr.InsertAtBack(2000);
-	cout << "After InsertAtBack(2000) : ";
-	MyStackArr.Print();
-	cout << "\n";
-
-	// Extension #7
-	MyStackArr.Clear();
-	cout << "After Clear() : ";
-	MyStackArr.Print();
-	cout << "\n";
-	cout << "Is Empty (True or False) : " << MyStackArr.IsEmpty();
-
+	cout << "Redo 3 :";
+	MyString.Redo();
+	cout << MyString.Value << endl;
 
 	cout << "\n\n";
 }
