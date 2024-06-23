@@ -3,10 +3,6 @@
 
 using namespace std;
 
-void PrintValue(clsUndoRedoProject <string>& MyString) {
-	cout << "String value : " << MyString.Value << endl;
-}
-
 int main()
 {
 	clsUndoRedoProject <string> MyString;
@@ -21,8 +17,9 @@ int main()
 	MyString.Value = "Abdullah 3";
 	cout << "String value : " << MyString.Value << endl;
 
-	//cout << "Undo Stack = ";
-	//MyString.PrintUndo();
+	cout << "\n\n";
+	cout << "Undo Stack = ";
+	MyString.PrintUndo();
 	cout << "\n\n";
 
 	cout << "Undo 1 :";
@@ -37,6 +34,9 @@ int main()
 	MyString.Undo();
 	cout << MyString.Value << endl;
 
+	cout << "\n\n";
+	cout << "Redo Stack = ";
+	MyString.PrintRedo();
 	cout << "\n\n";
 
 	cout << "Redo 1 :";

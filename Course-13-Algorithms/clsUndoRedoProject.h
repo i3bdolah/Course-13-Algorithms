@@ -48,7 +48,7 @@ public:
 	}
 
 	void Redo() {
-		if (!_UndoStack.IsEmpty())
+		if (!_RedoStack.IsEmpty())
 		{
 			_UndoStack.Push(this->_Value);
 			this->_Value = _RedoStack.Top();
