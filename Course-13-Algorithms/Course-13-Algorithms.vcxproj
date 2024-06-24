@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="clsMyStack.cpp" />
     <ClCompile Include="Course-13-Algorithms.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +136,9 @@
     <ClInclude Include="clsMyQueueArr.h" />
     <ClInclude Include="clsMyStack.h" />
     <ClInclude Include="clsMyStackArr.h" />
+    <ClInclude Include="clsQueueLine.h" />
     <ClInclude Include="clsUndoRedoProject.h" />
+    <ClInclude Include="Date.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
