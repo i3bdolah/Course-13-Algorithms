@@ -77,7 +77,21 @@ These steps will help you clone a C++ project from a Git repository and get it r
 Screenshots
 -----------
 
-_(Optional, but if you have any screenshots to add, you can include them here to help users understand the project better.)_
+![Screenshot 2024-06-28 111227](https://github.com/i3bdolah/Course-13-Algorithms/assets/80276711/1a34259f-a156-46c5-816b-f6bfe6890431)
+![Screenshot 2024-06-28 114012](https://github.com/i3bdolah/Course-13-Algorithms/assets/80276711/2d446fe5-ecd1-489f-834d-4744abbc9993)
+![Screenshot 2024-06-28 114028](https://github.com/i3bdolah/Course-13-Algorithms/assets/80276711/ec662bd4-ad26-409d-8066-f33b4760993f)
+![Screenshot 2024-06-28 114136](https://github.com/i3bdolah/Course-13-Algorithms/assets/80276711/8659eef7-b71c-4279-a10c-9ad9d9d5dd31)
+![Screenshot 2024-06-28 114312](https://github.com/i3bdolah/Course-13-Algorithms/assets/80276711/ee4c7188-8624-4e33-ae6a-469717fd4cc0)
+![Screenshot 2024-06-28 114317](https://github.com/i3bdolah/Course-13-Algorithms/assets/80276711/3313d9ba-fcf9-4819-8bc8-3a135932845b)
+![Screenshot 2024-06-28 114322](https://github.com/i3bdolah/Course-13-Algorithms/assets/80276711/a5d513c2-3c88-4100-8e5c-6c5aa56a28d2)
+![Screenshot 2024-06-28 114509](https://github.com/i3bdolah/Course-13-Algorithms/assets/80276711/cd1867f9-b60c-4d4f-a0c3-818f8343679c)
+![Screenshot 2024-06-28 114556](https://github.com/i3bdolah/Course-13-Algorithms/assets/80276711/6bff44e7-4368-4755-810f-04305c72d358)
+![Screenshot 2024-06-28 114655](https://github.com/i3bdolah/Course-13-Algorithms/assets/80276711/2e0c1bda-eb7d-4c5a-a1dd-75696d86238d)
+![Screenshot 2024-06-28 112225](https://github.com/i3bdolah/Course-13-Algorithms/assets/80276711/aabc69a4-881a-40d1-885d-2ffd6add2dd4)
+![Screenshot 2024-06-28 112236](https://github.com/i3bdolah/Course-13-Algorithms/assets/80276711/9503619d-0597-4c64-bd8b-d2ac86a9f7e3)
+
+
+
 
 Conclusion 
 ---------- 
