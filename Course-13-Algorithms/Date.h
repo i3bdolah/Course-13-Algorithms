@@ -424,6 +424,10 @@ public:
 		return FormattedTime;
 	}
 
+	string GetSystemDateAndTime() {
+		return GetDateInString() + " - " + GetSystemTime();
+	}
+
 	static int CountAllDays(Date dateAge) {
 		Date DateCurrent = GetSystemDate();
 		return DateDifference(dateAge, DateCurrent);
